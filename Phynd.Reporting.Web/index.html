@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Grid POC</title>
+    <link href="kendoui.for.jquery.2017.3.1026.trial/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendoui.for.jquery.2017.3.1026.trial/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="kendoui.for.jquery.2017.3.1026.trial/styles/kendo.default.mobile.min.css" rel="stylesheet" />
+    <script src="bower_components/jQuery/dist/jquery.min.js"></script>
+    <script src="kendoui.for.jquery.2017.3.1026.trial/js/kendo.all.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/elasticsearch/elasticsearch.jquery.js"></script>
+</head>
+<body>
+    <div id="kendoGridPOC">
+        <div id="grid"></div>
+
+        <script>
+            const PAGE_SIZE = 100;
+            $(document).ready(function () {
+                renderGrid();
+            });
+
+            function getData(pageNo, filter) {
+                const BASE_DATA_URL = 'https://search-dev-npidata-3hwjnhde2i5h3nitz3hpq4lzl4.us-east-1.es.amazonaws.com';
+                var elasticClient = $.es.Client({
+                    host: BASE_DATA_URL
+                });
+                var query;
+                if (filter) {
+                    query = {
+                        bool: {
+                            filter: {
+                                term: filter
+                            }
+                        }
+                    };
+                } else {
+                    query = {
+                        "match_all": {}
+                    };
+                };
+
+                var term = filter ? filter : {};
+                return elasticClient.search({
+                    index: 'providers',
+                    type: 'provider',
+                    from: (pageNo - 1) * PAGE_SIZE + 1,
+                    size: PAGE_SIZE,
+                    body: {
+                        query: query
+                    }
+                }).then(function(response) {
+                    var hits = response.hits.hits;
+                    var providers = _.map(hits, function (hit) {
+                        return hit._source;
+                    });
+                    return {
+                        data: providers,
+                        total: response.hits.total
+                    };
+                });
+            }
+
+            function renderGrid() {
+                $("#grid").kendoGrid({
+                    dataSource: {
+                        transport: {
+                            read: function (options) {
+                                var pageNo = options.data.page;
+                                var searchFilter;
+                                var filter = options.data.filter;
+                                if (filter && filter.filters.length > 0) {
+                                    searchFilter = {};
+                                    var filterName = filter.filters[0].field;
+                                    var filterValue = filter.filters[0].value;
+                                    searchFilter[filterName] = filterValue;
+                                };
+                                getData(options.data.page, searchFilter).then(function (data) {
+                                    options.success(data);
+                                });
+                            }
+                        },
+                        pageSize: PAGE_SIZE,
+                        serverPaging: true,
+                        serverFiltering: true,
+                        schema: {
+                            data: 'data',
+                            total: 'total'
+                        }
+                    },
+                    columns: [
+                        { field: "npi", title: "Npi" },
+                        { field: "entityTypeCode", title: "Entity Type Code" },
+                        { field: "organizationName", title: "Organization Name" },
+                        { field: "namePrefix", title: "Name Prefix" },
+                        { field: "firstName", title: "First Name" },
+                        { field: "middleName", title: "Middle Name" },
+                        { field: "lastName", title: "Last Name" },
+                        { field: "nameSuffix", title: "Name Suffix" },
+                        { field: "credentialText", title: "Credential Text" },
+                        { field: "benderCode", title: "Gender Code" }
+                    ],
+                    sortable: true,
+                    pageable: true,
+                    filterable: true,
+                    columnMenu: true,
+                    reorderable: true,
+                    resizable: true
+                });
+            };
+
+        </script>
+    </div>
+</body>
+</html>

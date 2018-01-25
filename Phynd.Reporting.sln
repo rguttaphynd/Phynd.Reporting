@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Reporting.Api", "Phynd.Reporting.Api\Phynd.Reporting.Api.csproj", "{7954A046-D892-4E95-9931-2CF0018B4608}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D51316C-2D72-4FA9-B5F2-D67027A70B08} = {8D51316C-2D72-4FA9-B5F2-D67027A70B08}
+		{56B41782-E813-465D-B9D3-FE5D0BEF795C} = {56B41782-E813-465D-B9D3-FE5D0BEF795C}
+		{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F} = {DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Reporting.BusinessEntities", "Phynd.Reporting.BusinessEntities\Phynd.Reporting.BusinessEntities.csproj", "{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Reporting.DataEntities", "Phynd.Reporting.DataEntities\Phynd.Reporting.DataEntities.csproj", "{AB3928C4-14EB-49D3-B726-47FA1BD64A72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Reporting.BusinessService", "Phynd.Reporting.BusinessService\Phynd.Reporting.BusinessService.csproj", "{8D51316C-2D72-4FA9-B5F2-D67027A70B08}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56B41782-E813-465D-B9D3-FE5D0BEF795C} = {56B41782-E813-465D-B9D3-FE5D0BEF795C}
+		{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F} = {DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}
+		{AB3928C4-14EB-49D3-B726-47FA1BD64A72} = {AB3928C4-14EB-49D3-B726-47FA1BD64A72}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Reporting.DataService", "Phynd.Reporting.DataService\Phynd.Reporting.DataService.csproj", "{56B41782-E813-465D-B9D3-FE5D0BEF795C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB3928C4-14EB-49D3-B726-47FA1BD64A72} = {AB3928C4-14EB-49D3-B726-47FA1BD64A72}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Common", "Phynd.Common\Phynd.Common.csproj", "{D291B363-CF4A-40FE-810A-4DE21650738B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Phynd.Reporting.Web", "Phynd.Reporting.Web\", "{3FEE9F7F-B19B-4C7A-93DC-2C7B70B37EE1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65066"
+		Debug.AspNetCompiler.PhysicalPath = "Phynd.Reporting.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65066\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65066"
+		Release.AspNetCompiler.PhysicalPath = "Phynd.Reporting.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65066\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65066"
+		SlnRelativePath = "Phynd.Reporting.Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phynd.Privilege.Test", "Phynd.Reporting.Test\Phynd.Privilege.Test.csproj", "{5D3BC8F8-B0D2-41EC-B0F5-34B68E58C3AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7954A046-D892-4E95-9931-2CF0018B4608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7954A046-D892-4E95-9931-2CF0018B4608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7954A046-D892-4E95-9931-2CF0018B4608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7954A046-D892-4E95-9931-2CF0018B4608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9348A8-DF6B-43A2-AD8A-26AD1DAC1D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3928C4-14EB-49D3-B726-47FA1BD64A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3928C4-14EB-49D3-B726-47FA1BD64A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3928C4-14EB-49D3-B726-47FA1BD64A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3928C4-14EB-49D3-B726-47FA1BD64A72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D51316C-2D72-4FA9-B5F2-D67027A70B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D51316C-2D72-4FA9-B5F2-D67027A70B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D51316C-2D72-4FA9-B5F2-D67027A70B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D51316C-2D72-4FA9-B5F2-D67027A70B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B41782-E813-465D-B9D3-FE5D0BEF795C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B41782-E813-465D-B9D3-FE5D0BEF795C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B41782-E813-465D-B9D3-FE5D0BEF795C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B41782-E813-465D-B9D3-FE5D0BEF795C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D291B363-CF4A-40FE-810A-4DE21650738B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D291B363-CF4A-40FE-810A-4DE21650738B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D291B363-CF4A-40FE-810A-4DE21650738B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D291B363-CF4A-40FE-810A-4DE21650738B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FEE9F7F-B19B-4C7A-93DC-2C7B70B37EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEE9F7F-B19B-4C7A-93DC-2C7B70B37EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FEE9F7F-B19B-4C7A-93DC-2C7B70B37EE1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEE9F7F-B19B-4C7A-93DC-2C7B70B37EE1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5D3BC8F8-B0D2-41EC-B0F5-34B68E58C3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3BC8F8-B0D2-41EC-B0F5-34B68E58C3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3BC8F8-B0D2-41EC-B0F5-34B68E58C3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3BC8F8-B0D2-41EC-B0F5-34B68E58C3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F375CEB9-0142-4139-87C1-808664228296}
+	EndGlobalSection
+EndGlobal

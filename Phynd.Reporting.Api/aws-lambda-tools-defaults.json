@@ -1,0 +1,14 @@
+
+{
+    "region" : "us-east-1",
+    "profile" : "default",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp2.0",
+    "function-name" : "CSApi7",
+    "function-handler" : "Phynd.HealthSystem.Api::Phynd.HealthSystem.Api.LambdaFunction::FunctionHandlerAsync",
+    "function-memory-size" : 256,
+    "function-role"        : "arn:aws:iam::709926611404:role/lambda_exec_CSApi7",
+    "function-timeout"     : 10,
+    "function-runtime"     : "dotnetcore2.0",
+    "environment-variables" : ""
+}

@@ -1,0 +1,19 @@
+{
+  "Logging": {
+    "IncludeScopes": false,
+    "Debug": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    },
+    "Console": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    }
+  },
+  "ConnectionStrings": {
+    "WriteConnection": "server=dev-rds01.cluster-cvyktwbacelv.us-east-1.rds.amazonaws.com;port=3306;database=DEV_Phynd;user=csalee;password=;",
+    "ReadConnection": "server=dev-rds01.cluster-cvyktwbacelv.us-east-1.rds.amazonaws.com;port=3306;database=DEV_Phynd;user=csalee;password=;"
+  }
+}

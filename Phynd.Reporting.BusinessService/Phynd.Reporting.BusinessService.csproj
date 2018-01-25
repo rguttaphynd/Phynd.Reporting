@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Phynd.Reporting.BusinessService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Phynd.Common\Phynd.Common.csproj" />
+    <ProjectReference Include="..\Phynd.Reporting.BusinessEntities\Phynd.Reporting.BusinessEntities.csproj" />
+    <ProjectReference Include="..\Phynd.Reporting.DataEntities\Phynd.Reporting.DataEntities.csproj" />
+    <ProjectReference Include="..\Phynd.Reporting.DataService\Phynd.Reporting.DataService.csproj" />
+  </ItemGroup>
+
+</Project>

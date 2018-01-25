@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>Phynd.Reporting.DataService</AssemblyName>
+    <RootNamespace>Phynd.Reporting.DataService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="6.10.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Phynd.Common\Phynd.Common.csproj" />
+    <ProjectReference Include="..\Phynd.Reporting.DataEntities\Phynd.Reporting.DataEntities.csproj" />
+  </ItemGroup>
+
+</Project>
